@@ -1,7 +1,6 @@
 package dummy
 
 import (
-	"fmt"
 	"github.com/GeoguessrTools/calico-cut-pants/core"
 )
 
@@ -17,5 +16,5 @@ func (d dummyImpl) Get(countryId string) (*core.Country, error) {
 		return &country, nil
 	}
 
-	return nil, fmt.Errorf("could not find country %s", countryId)
+	return nil, core.Error{Code: core.CountryNotFoundErr}
 }
