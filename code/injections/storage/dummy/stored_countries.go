@@ -20,10 +20,12 @@ var (
 			"Some Argentinian license plates have a distinctive black point in the middle of the plate",
 		},
 		RightDrive: true,
-		MetaInfo: []core.ImageWithDescription{
-			{
-				ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-meta-1.png",
-				Description: "The google car in Argentina is black. You can see it by panning down.",
+		Meta: core.Meta{
+			Car: []core.ImageWithDescription{
+				{
+					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-meta-1.png",
+					Description: "The google car in Argentina is black. You can see it by panning down.",
+				},
 			},
 		},
 		BollardsAndExtras: core.BollardsAndExtras{

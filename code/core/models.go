@@ -26,12 +26,18 @@ type Country struct {
 	PhoneNumbers      []string               `json:"phone_numbers"`
 	Notes             []string               `json:"notes"`
 	RightDrive        bool                   `json:"right_drive"`
-	MetaInfo          []ImageWithDescription `json:"meta_info"`
+	Meta              Meta                   `json:"meta"`
 	BollardsAndExtras BollardsAndExtras      `json:"bollards_and_extras"`
 	SignageAndTraffic SignageAndTraffic      `json:"signage_and_traffic"`
 	AreaCodes         []AreaCode             `json:"area_codes"`
 	UtilityPoles      UtilityPoles           `json:"utility_poles"`
 	Misc              []ImageWithDescription `json:"misc"`
+}
+
+type Meta struct {
+	Car    []ImageWithDescription `json:"car"`
+	Sky    []ImageWithDescription `json:"sky"`
+	Camera []ImageWithDescription `json:"camera"`
 }
 
 type ImageWithDescription struct {
