@@ -8,7 +8,7 @@ const (
 	SouthAmerica Continent = "SOUTH_AMERICA"
 	Africa       Continent = "AFRICA"
 	Europe       Continent = "EUROPE"
-	Australia    Continent = "Australia"
+	Australia    Continent = "AUSTRALIA"
 )
 
 type Language string
