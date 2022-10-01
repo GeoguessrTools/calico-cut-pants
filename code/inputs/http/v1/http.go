@@ -3,9 +3,10 @@ package v1
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+
 	"github.com/GeoguessrTools/calico-cut-pants/core"
 	"github.com/gorilla/mux"
-	"net/http"
 )
 
 type routerImpl struct {
@@ -19,7 +20,7 @@ func NewHttpRouter(calicoCut core.CalicoCutService) *mux.Router {
 		calicoCut: calicoCut,
 	}
 
-	router.HandleFunc("/countries/{id}", impl.HandleSingleCountry)
+	router.HandleFunc("/countries/{id}", impl.HandleSingleCountry).Methods("GET", "OPTIONS")
 
 	return router
 }
@@ -27,6 +28,11 @@ func NewHttpRouter(calicoCut core.CalicoCutService) *mux.Router {
 func (ri *routerImpl) HandleSingleCountry(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	countryId := vars["id"]
+
+	//Allow CORS here By * or specific origin
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
 	country, err := ri.calicoCut.Get(countryId)
 	if err != nil {
