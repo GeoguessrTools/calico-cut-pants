@@ -2,6 +2,7 @@ package dummy
 
 import (
 	"github.com/GeoguessrTools/calico-cut-pants/core"
+	util "github.com/GeoguessrTools/calico-cut-pants/utilities"
 )
 
 var (
@@ -19,119 +20,107 @@ var (
 			"The middle line often consists of a dashed white line next to a yellow, continuous line",
 			"Some Argentinian license plates have a distinctive black point in the middle of the plate",
 		},
-		RightDrive: true,
-		Meta: core.Meta{
-			Car: []core.ImageWithDescription{
+		RightDrive:     true,
+		TopLevelDomain: ".ar",
+		Meta: &core.Meta{
+			Car: []core.Hint{
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-meta-1.png",
-					Description: "The google car in Argentina is black. You can see it by panning down.",
+					ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-meta-1.png"),
+					Description: util.StrPtr("The google car in Argentina is black. You can see it by panning down."),
 				},
 			},
 		},
-		BollardsAndExtras: core.BollardsAndExtras{
-			Notes: []string{
-				"Argentina generally lacks bollards, it's not worth focusing on them",
+		LicensePlates: []core.Hint{
+			{
+				ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-license-plate-new.png"),
 			},
-			Info: []core.ImageWithDescription{
+			{
+				ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-license-plate-old.png"),
+			},
+		},
+		BollardsNSuch: []core.Hint{
+
+			{
+				ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-gas-station-sign.png"),
+				Description: util.StrPtr("This is the most common gas station in the country"),
+			},
+			{
+				ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-highway-marker.png"),
+				Description: util.StrPtr("Highway marker"),
+			},
+			{
+				ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-bollards.png"),
+				Description: util.StrPtr("Bollards"),
+			},
+		},
+		Signs: &core.Signs{
+			Yield: []core.Hint{
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-bus-sign.png",
-					Description: "This sign is commonly seen at gas stations",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-yield-1.png"),
 				},
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-street-name-sign.png",
-					Description: "Street name signs are dark and perpendicular",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-yield-2.png"),
+				},
+			},
+			Stop: []core.Hint{
+				{
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-stop.png"),
+				},
+			},
+			Pedestrian: []core.Hint{
+				{
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-pedestrian.png"),
+				},
+			},
+			Direction: []core.Hint{
+				{
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-direction.png"),
+				},
+			},
+			Speed: []core.Hint{
+				{
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-speed.png"),
+				},
+			},
+			Chevrons: []core.Hint{
+				{
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-blue.png"),
 				},
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-gas-station-sign.png",
-					Description: "Bus stop sign",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-left-red.png"),
 				},
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-highway-marker.png",
-					Description: "Highway marker",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-right-red.png"),
 				},
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-bollards.png",
-					Description: "Bollards",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-yellow-black.png"),
+				},
+			},
+			Highway: []core.Hint{
+				{
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-highway.png"),
+				},
+			},
+			Street: []core.Hint{
+				{
+					ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-street-name-sign.png"),
+					Description: util.StrPtr("Street name signs are dark and perpendicular"),
+				},
+			},
+			Transit: []core.Hint{
+				{
+					ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-bus-sign.png"),
+					Description: util.StrPtr("Bus stop sign"),
 				},
 			},
 		},
-		SignageAndTraffic: core.SignageAndTraffic{
-			YieldSigns: []core.ImageWithDescription{
+		Road: &core.Road{
+			StreetLines: []core.Hint{
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-yield-1.png",
-					Description: "",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-street-line-1.png"),
 				},
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-yield-2.png",
-					Description: "",
-				},
-			},
-			StopSigns: []core.ImageWithDescription{
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-stop.png",
-					Description: "",
-				},
-			},
-			PedestrianSigns: []core.ImageWithDescription{
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-pedestrian.png",
-					Description: "",
-				},
-			},
-			DirectionSigns: []core.ImageWithDescription{
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-direction.png",
-					Description: "",
-				},
-			},
-			SpeedSigns: []core.ImageWithDescription{
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-speed.png",
-					Description: "",
-				},
-			},
-			Chevrons: []core.ImageWithDescription{
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-blue.png",
-					Description: "",
-				},
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-left-red.png",
-					Description: "",
-				},
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-right-red.png",
-					Description: "",
-				},
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-yellow-black.png",
-					Description: "",
-				},
-			},
-			LicensePlates: []core.ImageWithDescription{
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-license-plate-new.png",
-					Description: "New",
-				},
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-license-plate-old.png",
-					Description: "Old",
-				},
-			},
-			HighwaySigns: []core.ImageWithDescription{
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-highway.png",
-					Description: "",
-				},
-			},
-			StreetLines: []core.ImageWithDescription{
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-street-line-1.png",
-					Description: "",
-				},
-				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-street-line-2.png",
-					Description: "",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-street-line-2.png"),
 				},
 			},
 		},
@@ -157,39 +146,37 @@ var (
 				Location: "Cordoba",
 			},
 		},
-		UtilityPoles: core.UtilityPoles{
+		UtilityPoles: &core.UtilityPoles{
 			ExtraNotes: []string{},
-			Poles: []core.ImageWithDescription{
+			Poles: []core.Hint{
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-utility-pole-1.png",
-					Description: "",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-utility-pole-1.png"),
 				},
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-utility-pole-2.png",
-					Description: "",
+					ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-utility-pole-2.png"),
 				},
 				{
-					ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-utility-pole-blue.png",
-					Description: "This pole can normally be found in Ushuaia, the southernmost point of Argentina.",
+					ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-utility-pole-blue.png"),
+					Description: util.StrPtr("This pole can normally be found in Ushuaia, the southernmost point of Argentina."),
 				},
 			},
 		},
-		Misc: []core.ImageWithDescription{
+		Misc: []core.Hint{
 			{
-				ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-misc-1.png",
-				Description: "Most parts of Argentina are covered in grassy field. Picture in the area south of Rosario/Buenos Ares.",
+				ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-misc-1.png"),
+				Description: util.StrPtr("Most parts of Argentina are covered in grassy field. Picture in the area south of Rosario/Buenos Ares."),
 			},
 			{
-				ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-misc-2.png",
-				Description: "The southern most point of Argentina near Ushuaia. Alpine feeling, a lot of bushy green and snow.",
+				ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-misc-2.png"),
+				Description: util.StrPtr("The southern most point of Argentina near Ushuaia. Alpine feeling, a lot of bushy green and snow."),
 			},
 			{
-				ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-misc-3.png",
-				Description: "Dry soil and patches of grass and low bushes. Mostly in the southern part of Argentina, picture from Sierra Nevada.",
+				ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-misc-3.png"),
+				Description: util.StrPtr("Dry soil and patches of grass and low bushes. Mostly in the southern part of Argentina, picture from Sierra Nevada."),
 			},
 			{
-				ImageURL:    "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-misc-4.png",
-				Description: "The north of Argentina. A lot of green vegetation.",
+				ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-misc-4.png"),
+				Description: util.StrPtr("The north of Argentina. A lot of green vegetation."),
 			},
 		},
 	}
