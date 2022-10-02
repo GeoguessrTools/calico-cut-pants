@@ -1,5 +1,6 @@
 package core
 
 type CalicoCutService interface {
-	Get(countryCode string) (*Country, error)
+	GetCountry(countryCode string) (*Country, error)
+	GetAllCountryNames() ([]string, error)
 }

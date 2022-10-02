@@ -7,6 +7,7 @@ import (
 
 var (
 	argentina = core.Country{
+		Name:         "Argentina",
 		FlagURL:      "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-flag.png",
 		MapURL:       "https://calico-cut-geo-tools.s3.amazonaws.com/argentina-map.png",
 		Continent:    core.SouthAmerica,

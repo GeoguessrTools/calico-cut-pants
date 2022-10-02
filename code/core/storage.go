@@ -1,5 +1,6 @@
 package core
 
 type Storage interface {
-	Get(country string) (*Country, error)
+	GetCountry(country string) (*Country, error)
+	GetAllCountries() ([]Country, error)
 }

@@ -19,6 +19,7 @@ const (
 
 type Country struct {
 	// guaranteed fields
+	Name              string     `json:"name"`
 	FlagURL           string     `json:"flag_url"`
 	MapURL            string     `json:"map_url"`
 	Continent         Continent  `json:"continent"`

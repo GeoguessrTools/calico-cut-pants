@@ -12,9 +12,9 @@ const (
 
 // NewHttpRouter dynamically constructs a router from a list of Route structs. CORS headers and the OPTIONS route will
 // be added to all routes.
-func NewHttpRouter(ri handlerImpl) *mux.Router {
+func NewHttpRouter(hi handlerImpl) *mux.Router {
 	router := mux.NewRouter()
-	routes := GetRoutes(ri)
+	routes := GetRoutes(hi)
 
 	for _, route := range routes {
 		methods := []string{http.MethodOptions, route.Method}
