@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	core2 "github.com/GeoguessrTools/calico-cut-pants/core"
+	"github.com/GeoguessrTools/calico-cut-pants/core"
 	"github.com/GeoguessrTools/calico-cut-pants/injections/storage/dummy"
 	httpv1 "github.com/GeoguessrTools/calico-cut-pants/inputs/http/v1"
 )
@@ -13,11 +13,11 @@ func main() {
 
 	dummyStorage, _ := dummy.NewDummyStorage()
 
-	core := core2.NewCalicoCutService(dummyStorage)
+	coreService := core.NewCalicoCutService(dummyStorage)
 
-	httpRouter := httpv1.NewHttpRouter(core)
+	httpHandler := httpv1.NewHttpHandler(coreService)
 
-	err := http.ListenAndServe(":6969", httpRouter)
+	err := http.ListenAndServe(":6969", httpHandler)
 	if err != nil {
 		fmt.Printf("http server failed: %s", err.Error())
 	}
