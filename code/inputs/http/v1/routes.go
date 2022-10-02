@@ -19,5 +19,11 @@ func GetRoutes(hi handlerImpl) []Route {
 			Function:          hi.HandleSingleCountry,
 			EnabledMiddleware: []Middleware{},
 		},
+		{
+			Path:              "countries",
+			Method:            http.MethodGet,
+			Function:          hi.HandleCountries,
+			EnabledMiddleware: []Middleware{},
+		},
 	}
 }
