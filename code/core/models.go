@@ -8,12 +8,14 @@ const (
 	SouthAmerica Continent = "SOUTH_AMERICA"
 	Africa       Continent = "AFRICA"
 	Europe       Continent = "EUROPE"
-	Australia    Continent = "AUSTRALIA"
+	Oceania      Continent = "OCEANIA"
 )
 
 type Language string
 
 const (
+	English Language = "ENGLISH"
+	Maori   Language = "MAORI"
 	Spanish Language = "SPANISH"
 )
 
