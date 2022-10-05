@@ -66,11 +66,11 @@ type Hint struct {
 	// This should be left blank for any hint that could be applied to multiple countries.
 	Significance *string `json:"significance,omitempty"`
 	// RegionSpecificity is a decimal from 0-1 representing how specific this hint is to a region.
-	RegionSpecificity *float32 `json:"region_specificity,omitempty"`
+	RegionSpecificity *float64 `json:"region_specificity,omitempty"`
 	// CountrySpecificity is a decimal from 0-1 representing how specific this hint is to the country.
-	CountrySpecificity *float32 `json:"country_specificity,omitempty"`
+	CountrySpecificity *float64 `json:"country_specificity,omitempty"`
 	// Frequency is a decimal from 0-1 representing how often this hint shows up.
-	Frequency *float32 `json:"frequency,omitempty"`
+	Frequency *float64 `json:"frequency,omitempty"`
 	// Identifier specified what kind of thing it is. Ex: for a map, this might be COUNTRY_MAP, chevron might be BLUE_WHITE_CHEVRON.
 	Identifier *string `json:"identifier,omitempty"`
 	// Tags are extra bits of information for searching, filtering, etc
@@ -93,7 +93,7 @@ type Road struct {
 	StreetLines []Hint `json:"street_lines,omitempty"`
 	Material    []Hint `json:"material,omitempty"`
 	// Quality is a value 1-10 signifying how good or bad the roads are. 10 is good, 1 is bad.
-	Quality *float32 `json:"quality,omitempty"`
+	Quality *float64 `json:"quality,omitempty"`
 }
 
 type AreaCode struct {
