@@ -234,12 +234,12 @@ var (
 			{
 				ImageURL:          util.StrPtr("https://geohints.com/Sources/Bollards/bollard_301.jpg"),
 				GoogleMapsExample: util.StrPtr("https://maps.google.com/maps?q=&layer=c&cbll=-45.1745633,170.3869734"),
-				// Tags: ["red", "yellow", "bollard", "dashes"]
+				Tags:              []string{"red", "yellow", "bollard", "dashes"},
 			},
 			{
 				ImageURL:          util.StrPtr("https://geohints.com/Sources/Bollards/bollard_241.jpg"),
 				GoogleMapsExample: util.StrPtr("https://maps.google.com/maps?q=&layer=c&cbll=-45.9822522,168.7499536"),
-				// Tags: ["green", "white", "bollard", "mile marker"]
+				Tags:              []string{"green", "white", "bollard", "mile marker"},
 			},
 		},
 		Signs: &core.Signs{
@@ -284,44 +284,13 @@ var (
 					Description: util.StrPtr("Variable speed sign. Can also have black background"),
 				},
 				{
-					ImageURL:     util.StrPtr("https://upload.wikimedia.org/wikipedia/commons/9/99/Products-ez-szsk144-rs62-w16-5-1-kura-school-speed-30km-sign-thumb.jpg"),
-					Description:  util.StrPtr("Maori Te Kura school zone sign"),
-					Significance: util.StrPtr("There is only one Te Kura school in the South of NZ. The rest are in the North."),
-					// RegionSpecificity:  float{0.4},
-					// CountrySpecificity: float32{1},
+					ImageURL:           util.StrPtr("https://upload.wikimedia.org/wikipedia/commons/9/99/Products-ez-szsk144-rs62-w16-5-1-kura-school-speed-30km-sign-thumb.jpg"),
+					Description:        util.StrPtr("Maori Te Kura school zone sign"),
+					Significance:       util.StrPtr("There is only one Te Kura school in the South of NZ. The rest are in the North."),
+					RegionSpecificity:  util.Float32Prt{0.4},
+					CountrySpecificity: util.Float32Prt{1},
 				},
 			},
-			// Chevrons: []core.Hint{
-			// 	// {
-			// 	// 	ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-blue.png"),
-			// 	// },
-			// 	// {
-			// 	// 	ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-left-red.png"),
-			// 	// },
-			// 	// {
-			// 	// 	ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-right-red.png"),
-			// 	// },
-			// 	// {
-			// 	// 	ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-chevron-yellow-black.png"),
-			// 	// },
-			// },
-			// Highway: []core.Hint{
-			// 	// {
-			// 	// 	ImageURL: util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-highway.png"),
-			// 	// },
-			// },
-			// Street: []core.Hint{
-			// 	// {
-			// 	// 	ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-street-name-sign.png"),
-			// 	// 	Description: util.StrPtr("Street name signs are dark and perpendicular"),
-			// 	// },
-			// },
-			// Transit: []core.Hint{
-			// 	// {
-			// 	// 	ImageURL:    util.StrPtr("https://calico-cut-geo-tools.s3.amazonaws.com/argentina-bus-sign.png"),
-			// 	// 	Description: util.StrPtr("Bus stop sign"),
-			// 	// },
-			// },
 		},
 		AreaCodes: []core.AreaCode{
 			{
@@ -350,24 +319,23 @@ var (
 			},
 		},
 		UtilityPoles: &core.UtilityPoles{
-			// ExtraNotes: []string{},
 			Poles: []core.Hint{
 				{
-					ImageURL:    util.StrPtr("https://geohints.com/Sources/Poles/pole_37.jpg"),
-					Description: util.StrPtr("Has a depression and white bottom"),
-					// Tags: ["concrete", "grey"],
+					ImageURL:          util.StrPtr("https://geohints.com/Sources/Poles/pole_37.jpg"),
+					Description:       util.StrPtr("Has a depression and white bottom"),
+					Tags:              []string{"concrete", "grey"},
 					GoogleMapsExample: util.StrPtr("https://maps.google.com/maps?q=&layer=c&cbll=-40.3220863,175.8779131"),
 				},
 				{
-					ImageURL:    util.StrPtr("https://geohints.com/Sources/Poles/pole_57.jpg"),
-					Description: util.StrPtr("Dark concrete with a posseum guard"),
-					// Tags: ["posseum guard", "concrete"],
+					ImageURL:          util.StrPtr("https://geohints.com/Sources/Poles/pole_57.jpg"),
+					Description:       util.StrPtr("Dark concrete with a posseum guard"),
+					Tags:              []string{"posseum guard", "concrete"},
 					GoogleMapsExample: util.StrPtr("https://maps.google.com/maps?q=&layer=c&cbll=-37.8128412,175.4398179"),
 				},
 				{
-					ImageURL:    util.StrPtr("https://geohints.com/Sources/Poles/pole_147.jpg"),
-					Description: util.StrPtr("Double pole"),
-					// Tags: ["double pole"],
+					ImageURL:          util.StrPtr("https://geohints.com/Sources/Poles/pole_147.jpg"),
+					Description:       util.StrPtr("Double pole"),
+					Tags:              []string{"double pole"},
 					GoogleMapsExample: util.StrPtr("https://goo.gl/maps/3BkpvdYEMVFCBmzH6"),
 				},
 			},
